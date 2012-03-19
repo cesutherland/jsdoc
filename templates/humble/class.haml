@@ -1,0 +1,26 @@
+%h4 Class 
+  %code #{name}
+  - if (summary) {
+  :&nbsp;
+  %span.class-summary #{summary}
+  - }
+
+- if (description) {
+- description = '<p>' + description.replace(/\n\n/g, '</p><p>') + '</p>';
+%p.description= description
+- }
+
+- if (params) {
+%h5 Configuration:
+.parameters
+  %p An object is submitted to the constructor for configuration.
+  %ul
+    - params.forEach(function (param) {
+    %li.param
+      %code #{param.name}
+      %span #{param.description}
+    - });
+- };
+
+%h5 Methods:
+

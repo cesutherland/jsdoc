@@ -1,0 +1,21 @@
+.class-method
+  %code
+    %span.name #{name}
+    - if (typeof params !== 'undefined') {
+    - params.forEach(function (param, i) {
+    - if (i > 0) {
+    ,&nbsp;
+    - }
+    - if (param.optional) {
+    [
+    - }
+    #{param.name}
+    - if (param.optional) {
+    ]
+    - }
+    - });
+    - }
+  - if (description) {
+  - description = '<p>' + description.replace(/\n\n/g, '</p><p>') + '</p>';
+  %p.description= description
+  - }
