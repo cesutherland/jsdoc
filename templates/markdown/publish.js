@@ -69,6 +69,7 @@
                         if (param.optional) {
                             t = tMethodOptional({param : t});
                         }
+                        if (params) params += ', ';
                         params += t;
                     });
                 }
