@@ -1,13 +1,14 @@
 %h4 Class 
-  %code #{name}
+  %code envision.#{name}
   - if (summary) {
   :&nbsp;
   %span.class-summary #{summary}
   - }
 
+= '<div class="class-description">'
 - if (description) {
 - description = '<p>' + description.replace(/\n\n/g, '</p><p>') + '</p>';
-%p.description= description
+.description= description
 - }
 
 - if (params) {
